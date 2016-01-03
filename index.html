@@ -51,10 +51,10 @@
 	<footer>
 		<h1>Quotes on type</h1>
 		<div class="menu">
-			<a href="javascript:void(0)" class="tweet" onclick="fbs_click();">Tweet</a> ·
+			<a href="javascript:void(0)" class="tweet" onclick="fbs_click(); ga('send', 'event', 'Links', 'Tweet');">Tweet</a> ·
 			<a href="javascript:void(0)" onclick="getQuote()">Get another</a> ·
-			<a href="https://docs.google.com/forms/d/1LV1Uztkx5M_lQPq62aQ1fNgtX7VMZXWRcgEw7STE-wo/viewform?usp=send_form" target="_blank">Submit a quote</a> ·
-			<i>Curated by</i> <a href="http://matejlatin.co.uk" target="_blank">Matej Latin</a>.
+			<a href="https://docs.google.com/forms/d/1LV1Uztkx5M_lQPq62aQ1fNgtX7VMZXWRcgEw7STE-wo/viewform?usp=send_form" onclick="ga('send', 'event', 'Links', 'Submit Quote');" target="_blank">Submit a quote</a> ·
+			<i>Curated by</i> <a href="http://matejlatin.co.uk" target="_blank" onclick="ga('send', 'event', 'Links', 'matejlatin.co.uk');">Matej Latin</a>.
 		</div>
 	</footer>
 	<script>
