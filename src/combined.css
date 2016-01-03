@@ -620,6 +620,10 @@ blockquote cite {
   blockquote cite {
     font-size: 1.4rem;
   }
+
+  article {
+    height: 85%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
