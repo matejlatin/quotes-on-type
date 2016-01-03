@@ -3,3 +3,47 @@ body, html {
 	height: 100%;
 	margin: 0;
 }
+
+article {
+	display: table;
+	min-height: 85%;
+	max-width: 70%;
+	margin: auto;
+}
+
+blockquote {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+body > footer {
+	width: 100%;
+	padding: 1.5rem;
+	background-color: #F8F8F8;
+	overflow: auto;
+}
+
+.menu {
+	float: right;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #A4AFBB;
+	line-height: 2em;
+
+	.tweet {
+		color: #55acee!important;
+	}
+
+	a {
+		color: #A4AFBB;
+		text-decoration: none;
+
+		&:visited {
+			color: #A4AFBB;
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
