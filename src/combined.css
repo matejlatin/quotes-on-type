@@ -591,18 +591,11 @@ blockquote p {
 }
 blockquote cite {
   font-style: normal;
-  font-variant-caps: small-caps;
-  -moz-font-feature-settings: "smcp";
-  -webkit-font-feature-settings: "smcp";
-  font-feature-settings: "smcp";
+  font-family: "garamond-premier-pro-small-caps";
   letter-spacing: 0.07em;
   font-kerning: normal;
   font-size: 1rem;
   color: #F15D64;
-}
-
-.wf-active blockquote cite {
-  text-transform: lowercase;
 }
 
 @media screen and (min-width: 35rem) {
