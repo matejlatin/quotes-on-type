@@ -26,7 +26,8 @@ function fbs_click() {
 	var twtUrl = location.href;
 	var maxLength = 140 - (twtUrl.length + 12);
 	var difference = twtTitle.length - maxLength;
-	if (difference > 3) {
+	console.log(difference);
+	if (difference > -3) {
 		twtTitle = twtTitle.substr(0, (maxLength - 3)) + '...';
 	}
 	var twtLink = 'http://twitter.com/share?text=' + encodeURIComponent(twtTitle) + '&url=' + encodeURIComponent(twtUrl) + '&hashtags=typography&related=matejlatin';
