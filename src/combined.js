@@ -24,7 +24,7 @@ function fbs_click() {
 	quote = quoteClean.replace(/[<]br[^>]*[>]/gi,"");  // removes all <br>
 	var twtTitle = quote;
 	var twtUrl = location.href;
-	var maxLength = 140 - (twtUrl.length + 7);
+	var maxLength = 140 - (twtUrl.length + 12);
 	if (twtTitle.length > maxLength) {
 		twtTitle = twtTitle.substr(0, (maxLength - 3)) + '...';
 	}
