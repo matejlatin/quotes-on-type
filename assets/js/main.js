@@ -25,7 +25,8 @@ function fbs_click() {
 	var twtTitle = quote;
 	var twtUrl = location.href;
 	var maxLength = 140 - (twtUrl.length + 12);
-	if (twtTitle.length > maxLength) {
+	var difference = twtTitle.length - maxLength;
+	if (difference > 3) {
 		twtTitle = twtTitle.substr(0, (maxLength - 3)) + '...';
 	}
 	var twtLink = 'http://twitter.com/share?text=' + encodeURIComponent(twtTitle) + '&url=' + encodeURIComponent(twtUrl) + '&hashtags=typography&related=matejlatin';
