@@ -24,10 +24,10 @@ function fbs_click() {
 	quote = quoteClean.replace(/[<]br[^>]*[>]/gi,"");  // removes all <br>
 	var twtTitle = quote;
 	var twtUrl = location.href;
-	var maxLength = 140 - (twtUrl.length + 1);
+	var maxLength = 140 - (twtUrl.length + 7);
 	if (twtTitle.length > maxLength) {
 		twtTitle = twtTitle.substr(0, (maxLength - 3)) + '...';
 	}
-	var twtLink = 'http://twitter.com/share?text=' + twtTitle + '&url=' + encodeURIComponent(twtUrl) + '&hashtags=typography&related=matejlatin';
+	var twtLink = 'http://twitter.com/share?text=' + encodeURIComponent(twtTitle) + '&url=' + encodeURIComponent(twtUrl) + '&hashtags=typography&related=matejlatin';
 	window.open(twtLink);
 }
