@@ -23,7 +23,6 @@ function fbs_click() {
 	var quoteClean = quote.replace(/[&]nbsp[;]/gi," "); // removes all occurrences of &nbsp;
 	quote = quoteClean.replace(/[<]br[^>]*[>]/gi,"");  // removes all <br>
 	var twtTitle = quote;
-	console.log(twtTitle);
 	var twtUrl = location.href;
 	var maxLength = 140 - (twtUrl.length + 1);
 	if (twtTitle.length > maxLength) {
