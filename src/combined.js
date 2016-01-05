@@ -26,7 +26,6 @@ function fbs_click() {
 	var twtUrl = location.href;
 	var maxLength = 140 - (twtUrl.length + 12);
 	var difference = twtTitle.length - maxLength;
-	console.log(difference);
 	if (difference > -3) {
 		twtTitle = twtTitle.substr(0, (maxLength - 3)) + '...';
 	}
