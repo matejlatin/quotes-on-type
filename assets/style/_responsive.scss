@@ -13,6 +13,12 @@
 
 		cite {
 			font-size: 1.4rem;
+			font-variant-caps: all-small-caps;
+			-moz-font-feature-settings: "c2sc", "smcp";
+			-webkit-font-feature-settings: "c2sc", "smcp";
+			font-feature-settings: "c2sc", "smcp";
+			letter-spacing: 0.07em;
+			font-kerning: normal;
 		}
 	}
 

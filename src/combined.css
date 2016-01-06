@@ -591,9 +591,6 @@ blockquote p {
 }
 blockquote cite {
   font-style: normal;
-  font-family: "garamond-premier-pro-small-caps";
-  letter-spacing: 0.07em;
-  font-kerning: normal;
   font-size: 1rem;
   color: #F15D64;
 }
@@ -612,6 +609,12 @@ blockquote cite {
   }
   blockquote cite {
     font-size: 1.4rem;
+    font-variant-caps: all-small-caps;
+    -moz-font-feature-settings: "c2sc", "smcp";
+    -webkit-font-feature-settings: "c2sc", "smcp";
+    font-feature-settings: "c2sc", "smcp";
+    letter-spacing: 0.07em;
+    font-kerning: normal;
   }
 
   article {
