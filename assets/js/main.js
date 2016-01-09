@@ -32,3 +32,22 @@ function fbs_click() {
 	var twtLink = 'http://twitter.com/share?text=' + encodeURIComponent(twtTitle) + '&url=' + encodeURIComponent(twtUrl) + '&hashtags=typography&related=matejlatin';
 	window.open(twtLink);
 }
+
+$(document).bind('keypress', function(e) {
+	if(e.keyCode==32){
+		getQuote();
+		ga('send', 'event', 'Keypress', 'Get Another');
+		$('#keyboard').fadeOut(70).fadeIn(130);
+		setTimeout(function(){
+			$('.instructions').addClass('fadeOutDown')
+		}, 300);
+	}
+});
+
+var bw = $(window).width();
+
+setTimeout(function(){
+	if (bw > 1199){
+		$('.instructions').addClass('animated').addClass('fadeInUp');
+	}
+}, 1500);

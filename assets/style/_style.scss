@@ -6,9 +6,13 @@ body, html {
 
 article {
 	display: table;
-	min-height: 85%;
+	min-height: 90%;
 	max-width: 70%;
 	margin: auto;
+
+	p {
+		margin-top: 0;
+	}
 }
 
 blockquote {
@@ -46,4 +50,97 @@ body > footer {
 			text-decoration: underline;
 		}
 	}
+}
+
+.instructions {
+	opacity: 0;
+	width: 100%;
+	position: fixed;
+	bottom: 15%;
+	text-align: center;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #DAD9D9;
+
+	.keyboard {
+		background: url(../images/bg-keyboard.png) no-repeat;
+		width: 70px;
+		height: 28px;
+		background-size: contain;
+		margin: auto;
+	}
+
+	p {
+		margin: 0;
+		margin-top: 10px;
+	}
+}
+
+.animated {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
 }
