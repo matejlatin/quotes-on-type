@@ -4,17 +4,24 @@ var quote = "";
 
 function getQuote() {
 	$.getJSON('quotes.json', function(data) {
-		$('#quote').empty().hide();
+		// $('#quote').hide();
+		$('.quote').empty().hide();
+		$('.author').empty().hide();
 		var random_entry = data[Math.floor(Math.random()*data.length)];
 
-		var html = '<p>';
-		html += random_entry['quote'] + '</p>';
-		html += '<footer><cite>—' + random_entry['author'] + '</cite></footer>';
-		quote = "";
-		quote += random_entry['quote'];
-		quote += ' —' + random_entry['author'];
+		var quote = '';
+		var author = '';
+		quote += random_entry['quote'] + '';
+		author += '<cite>—' + random_entry['author'] + '</cite>';
+		// quote = "";
+		// quote += random_entry['quote'];
+		// quote += ' —' + random_entry['author'];
 
-		$('#quote').append(html).fadeIn();
+		$('.quote').append(quote).fadeIn();
+		$('.author').append(author).removeClass('turn-to-red').fadeIn();
+		setTimeout(function() {
+			$('.author').addClass('turn-to-red');
+		}, 300);
 	});
 };
 

@@ -520,10 +520,21 @@ blockquote {
   vertical-align: middle;
 }
 
+.author {
+  color: #fff;
+}
+
+.turn-to-red {
+  color: #F15D64;
+  -webkit-animation-delay: 2s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 2s;
+  transition: all .5s;
+}
+
 body > footer {
   width: 100%;
   padding: 1.5rem;
-  background-color: #F8F8F8;
   overflow: auto;
 }
 
@@ -678,7 +689,6 @@ blockquote p {
 blockquote cite {
   font-style: normal;
   font-size: 1rem;
-  color: #F15D64;
 }
 
 @media screen and (min-width: 35rem) {
