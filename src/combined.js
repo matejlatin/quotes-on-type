@@ -13,23 +13,24 @@ function getQuote() {
 		var author = '';
 		quote += random_entry['quote'] + '';
 		author += '<cite>—' + random_entry['author'] + '</cite>';
-		// quote = "";
-		// quote += random_entry['quote'];
-		// quote += ' —' + random_entry['author'];
 
-		$('.quote').append(quote).fadeIn();
+		$('.quote').append(quote).fadeIn(500);
 		$('.author').append(author).removeClass('turn-to-red').fadeIn();
 		setTimeout(function() {
 			$('.author').addClass('turn-to-red');
 		}, 300);
+
+		tweetQuote = "";
+		tweetQuote += random_entry['quote'];
+		tweetQuote += ' —' + random_entry['author'];
 	});
 };
 
 // Tweet Button
 function fbs_click() {
-	var quoteClean = quote.replace(/[&]nbsp[;]/gi," "); // removes all occurrences of &nbsp;
-	quote = quoteClean.replace(/[<]br[^>]*[>]/gi,"");  // removes all <br>
-	var twtTitle = quote;
+	var quoteClean = tweetQuote.replace(/[&]nbsp[;]/gi," "); // removes all occurrences of &nbsp;
+	tweetQuote = quoteClean.replace(/[<]br[^>]*[>]/gi,"");  // removes all <br>
+	var twtTitle = tweetQuote;
 	var twtUrl = location.href;
 	var maxLength = 140 - (twtUrl.length + 12);
 	var difference = twtTitle.length - maxLength;

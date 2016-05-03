@@ -28,7 +28,7 @@ blockquote {
 	color: #F15D64;
 	-webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
     animation-delay: 2s;
-    transition: all .5s;
+    transition: all .4s;
 }
 
 body > footer {
@@ -42,7 +42,7 @@ body > footer {
 	float: right;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 14px;
-	color: #A4AFBB;
+	color: #C4CBD2;
 	line-height: 2em;
 
 	.tweet {
@@ -50,15 +50,18 @@ body > footer {
 	}
 
 	a {
-		color: #A4AFBB;
+		color: #C4CBD2;
 		text-decoration: none;
+		-webkit-transition: all .3s;
+		transition: all .3s;
 
 		&:visited {
-			color: #A4AFBB;
+			color: #C4CBD2;
 		}
 
 		&:hover {
-			text-decoration: underline;
+			text-decoration: none;
+			color: $colorMedium;
 		}
 	}
 }
