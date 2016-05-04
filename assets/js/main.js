@@ -41,8 +41,10 @@ function fbs_click() {
 	window.open(twtLink);
 }
 
-$(document).bind('keypress', function(e) {
+// On Keypress
+$(document).bind('keydown', function(e) {
 	if(e.keyCode==32){
+		e.preventDefault();
 		getQuote();
 		ga('send', 'event', 'Keypress', 'Get Another');
 		$('#keyboard').fadeOut(70).fadeIn(130);
@@ -54,6 +56,7 @@ $(document).bind('keypress', function(e) {
 
 var bw = $(window).width();
 
+// Keyboard Instructions
 setTimeout(function(){
 	if (bw > 1199){
 		$('.instructions').addClass('animated').addClass('fadeInUp');
