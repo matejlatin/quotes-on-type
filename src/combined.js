@@ -1,5 +1,9 @@
 $(document).ready(getQuotes());
 
+function randomIntFromInterval(min,max){
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
 function getQuotes(){
 	$.ajax({
 		url: "https://quotes-on-type.stamplayapp.com/api/codeblock/v1/run/get_quotes",
@@ -26,7 +30,12 @@ function pushQuotes(data) {
 		$('.quote').empty().hide();
 		$('.author').empty().hide();
 		var objectLength = quotes.data.length;
-		random_entry = quotes.data[Math.floor((Math.random() * objectLength) + 1)];
+		var max = objectLength - 1;
+		// console.log(objectLength);
+		random_number = randomIntFromInterval(0, max);
+		console.log(random_number);
+		random_entry = quotes.data[random_number];
+		console.log(random_entry);
 
 		quote = '';
 		author = '';
