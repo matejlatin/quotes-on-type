@@ -645,6 +645,11 @@ body > footer {
   animation-name: fadeOutDown;
 }
 
+@supports (overflow: -webkit-marquee) and (justify-content: inherit) {
+  .safari_only {
+    letter-spacing: 0;
+  }
+}
 body, html {
   color: #343434;
   font: 100% "garamond-premier-pro", Georgia, serif;

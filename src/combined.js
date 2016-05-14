@@ -1,18 +1,37 @@
-$(document).ready(getQuote);
+$(document).ready(getQuotes());
 
-var quote = "";
+function getQuotes(){
+	$.ajax({
+		url: "https://quotes-on-type.stamplayapp.com/api/codeblock/v1/run/get_quotes",
+		type: 'POST',
+		dataType: 'json',
+		contentType: 'application/json',
+		success: pushQuotes,
+		error: function(){
+			var quote;
+			console.log("Cannot get data");
+			$('.quote').empty().hide();
+			quote += 'Oops, something went wrong. Please refresh the page.';
+			$('.quote').append(quote).fadeIn(500);
+		}
+	});
+};
 
-function getQuote() {
-	$.getJSON('quotes.json', function(data) {
-		// $('#quote').hide();
+function pushQuotes(data) {
+	quotes = data;
+	getQuote();
+
+	// console.log(quotes);
+	function getQuote(){
 		$('.quote').empty().hide();
 		$('.author').empty().hide();
-		var random_entry = data[Math.floor(Math.random()*data.length)];
+		var objectLength = quotes.data.length;
+		random_entry = quotes.data[Math.floor((Math.random() * objectLength) + 1)];
 
-		var quote = '';
-		var author = '';
-		quote += random_entry['quote'] + '';
-		author += '<cite>—' + random_entry['author'] + '</cite>';
+		quote = '';
+		author = '';
+		quote += random_entry['Quote'] + '';
+		author += '<cite class="safari_only">—' + random_entry['Author'] + '</cite>';
 
 		$('.quote').append(quote).fadeIn(500);
 		$('.author').append(author).removeClass('turn-to-red').fadeIn();
@@ -21,8 +40,21 @@ function getQuote() {
 		}, 300);
 
 		tweetQuote = "";
-		tweetQuote += random_entry['quote'];
-		tweetQuote += ' —' + random_entry['author'];
+		tweetQuote += random_entry['Quote'];
+		tweetQuote += ' —' + random_entry['Author'];
+	}
+
+	// On Keypress
+	$(document).bind('keydown', function(e) {
+		if(e.keyCode==32){
+			e.preventDefault();
+			getQuote();
+			ga('send', 'event', 'Keypress', 'Get Another');
+			$('#keyboard').fadeOut(70).fadeIn(130);
+			setTimeout(function(){
+				$('.instructions').addClass('fadeOutDown')
+			}, 300);
+		}
 	});
 };
 
@@ -40,19 +72,6 @@ function fbs_click() {
 	var twtLink = 'http://twitter.com/share?text=' + encodeURIComponent(twtTitle) + '&url=' + encodeURIComponent(twtUrl) + '&hashtags=typography&related=matejlatin';
 	window.open(twtLink);
 }
-
-// On Keypress
-$(document).bind('keydown', function(e) {
-	if(e.keyCode==32){
-		e.preventDefault();
-		getQuote();
-		ga('send', 'event', 'Keypress', 'Get Another');
-		$('#keyboard').fadeOut(70).fadeIn(130);
-		setTimeout(function(){
-			$('.instructions').addClass('fadeOutDown')
-		}, 300);
-	}
-});
 
 var bw = $(window).width();
 
