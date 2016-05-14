@@ -158,3 +158,12 @@ body > footer {
   -webkit-animation-name: fadeOutDown;
   animation-name: fadeOutDown;
 }
+
+@supports (overflow:-webkit-marquee) and (justify-content:inherit)
+{
+
+  .safari_only {
+    letter-spacing: 0;
+  }
+
+}
