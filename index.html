@@ -9,6 +9,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<link rel="stylesheet" href="src/combined.min.css">
 	<script src="src/combined.min.js"></script>
+
+	<meta name="description" content="Quotes on typography — Curated by Matej Latin" />
+	<meta name="keywords" content="typography, type, quotes, design, Matej, Latin">
 	<meta property="og:title" content="Quotes on type">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="http://quotesontype.com/">
@@ -22,6 +25,7 @@
 	<meta name="twitter:domain" content="quotesontype.com" />
 	<meta name="twitter:image:src" content="http://quotesontype.com/quote.png" />
 	<meta name="twitter:card" content="summary_large_image">
+	<meta name="msvalidate.01" content="5360663AA079A15002B34C4289C56DA2" />
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -46,16 +50,35 @@
 <body>
 	<article>
 		<blockquote id="quote">
+		<p class="quote"></p>
+		<footer class="author"></footer>
 		</blockquote>
+		<div class="err"></div>
 	</article>
+	<div class="instructions">
+		<div class="keyboard">
+			<img src="images/keyboard.png" id="keyboard" alt="Keyboard" width="70">
+		</div>
+		<p>Press ‘space’ to get another.</p>
+	</div>
 	<footer>
 		<h1>Quotes on type</h1>
 		<div class="menu">
-			<a href="javascript:void(0)" class="tweet" onclick="fbs_click();">Tweet</a> ·
-			<a href="javascript:void(0)" onclick="getQuote()">Get another</a> ·
-			<a href="https://docs.google.com/forms/d/1LV1Uztkx5M_lQPq62aQ1fNgtX7VMZXWRcgEw7STE-wo/viewform?usp=send_form" target="_blank">Submit a quote</a> ·
-			<i>Curated by</i> <a href="http://matejlatin.co.uk" target="_blank">Matej Latin</a>.
+			<a href="javascript:void(0)" class="tweet" onclick="fbs_click(); ga('send', 'event', 'Links', 'Tweet');">Tweet</a> ·
+			<a href="javascript:void(0)" onclick="getQuote(); ga('send', 'event', 'Links', 'Get Another');">Get another</a> ·
+			<a href="https://docs.google.com/forms/d/1LV1Uztkx5M_lQPq62aQ1fNgtX7VMZXWRcgEw7STE-wo/viewform?usp=send_form" onclick="ga('send', 'event', 'Links', 'Submit Quote');" target="_blank">Submit a quote</a> ·
+			<a href="http://matejlatin.co.uk" target="_blank" onclick="ga('send', 'event', 'Links', 'matejlatin.co.uk');">Curated by Matej Latin</a>.
 		</div>
 	</footer>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-36131831-8', 'auto');
+		ga('send', 'pageview');
+
+	</script>
 </body>
 </html>

@@ -6,9 +6,13 @@ body, html {
 
 article {
 	display: table;
-	min-height: 85%;
+	min-height: 90%;
 	max-width: 70%;
 	margin: auto;
+
+	p {
+		margin-top: 0;
+	}
 }
 
 blockquote {
@@ -16,10 +20,21 @@ blockquote {
 	vertical-align: middle;
 }
 
+.author {
+	color: #fff;
+}
+
+.turn-to-red {
+	color: #F15D64;
+	-webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+    animation-delay: 2s;
+    transition: all .4s;
+}
+
 body > footer {
 	width: 100%;
 	padding: 1.5rem;
-	background-color: #F8F8F8;
+	// background-color: #F8F8F8;
 	overflow: auto;
 }
 
@@ -27,7 +42,7 @@ body > footer {
 	float: right;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 14px;
-	color: #A4AFBB;
+	color: #C4CBD2;
 	line-height: 2em;
 
 	.tweet {
@@ -35,15 +50,120 @@ body > footer {
 	}
 
 	a {
-		color: #A4AFBB;
+		color: #C4CBD2;
 		text-decoration: none;
+		-webkit-transition: all .3s;
+		transition: all .3s;
 
 		&:visited {
-			color: #A4AFBB;
+			color: #C4CBD2;
 		}
 
 		&:hover {
-			text-decoration: underline;
+			text-decoration: none;
+			color: $colorMedium;
 		}
 	}
+}
+
+.instructions {
+	opacity: 0;
+	width: 100%;
+	position: fixed;
+	bottom: 15%;
+	text-align: center;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #DAD9D9;
+
+	.keyboard {
+		background: url(../images/bg-keyboard.png) no-repeat;
+		width: 70px;
+		height: 28px;
+		background-size: contain;
+		margin: auto;
+	}
+
+	p {
+		margin: 0;
+		margin-top: 10px;
+	}
+}
+
+.animated {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+@supports (overflow:-webkit-marquee) and (justify-content:inherit)
+{
+
+  .safari_only {
+    letter-spacing: 0;
+  }
+
 }
