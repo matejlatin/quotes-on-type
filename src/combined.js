@@ -44,6 +44,11 @@ function pushQuotes(data) {
 		tweetQuote += ' —' + random_entry['Author'];
 	}
 
+	// Get Another Link
+	$('#getAnother').on('click', function(){
+		getQuote();
+	});
+
 	// On Keypress
 	$(document).bind('keydown', function(e) {
 		if(e.keyCode==32){
