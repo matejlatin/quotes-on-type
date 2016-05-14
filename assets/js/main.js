@@ -25,17 +25,13 @@ function pushQuotes(data) {
 	quotes = data;
 	getQuote();
 
-	// console.log(quotes);
 	function getQuote(){
 		$('.quote').empty().hide();
 		$('.author').empty().hide();
 		var objectLength = quotes.data.length;
 		var max = objectLength - 1;
-		// console.log(objectLength);
 		random_number = randomIntFromInterval(0, max);
-		console.log(random_number);
 		random_entry = quotes.data[random_number];
-		console.log(random_entry);
 
 		quote = '';
 		author = '';
