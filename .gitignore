@@ -2,3 +2,7 @@
 node_modules/
 
 *.scssc
+
+quotes-on-type.sublime-project
+
+quotes-on-type.sublime-workspace
